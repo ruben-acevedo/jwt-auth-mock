@@ -26,7 +26,7 @@ router.post("/login", (req, res) => {
   }
 });
 
-router.post("logout", (req, res) => {
+router.post("/logout", (req, res) => {
   res.json({
     auth: false,
     token: null,
