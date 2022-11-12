@@ -1,10 +1,9 @@
-const express = require("express")
-const app = express()
+require("dotenv").config();
+const express = require("express");
+const loginRouter = require("./src/routes/loginRouter");
+const app = express();
 
-app.use(express.json())
+app.use(express.json());
+app.use("/", loginRouter);
 
-app.get("/", (req,res) => {
-  res.send("Hello World!")
-})
-
-app.listen(3000, () =>  console.log("initialized at 3000."))
+app.listen(3000, () => console.log("initialized at 3000."));
